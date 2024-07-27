@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Customer Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #dde4eb;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+   
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h3>WELCOME STAFF - CUSTOMERS</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="/home">Restaurant Details</Details></a></li>
+        <li ><a href="order">Order Details</a></li>
+        <li class="active"><a href="customer">Customer Details</Details></a></li>
+        <li><a href="/home/menu">Menu</a></li>
+        <li ><a href="/home/customer_entry">Customer Entry</a></li>
+        <li ><a href="/home/order_item">Order Items</a></li>
+        <li ><a href="/home/item_entry">Item Entry</a></li>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+      <h2><small>CUSTOMERS DETAILS</small></h2>
+      <table class = "table table-hover table-dark">
+        <thread>
+            <tr>
+                <th bgcolor="6699ff" scope = "col">Customer ID </th>
+                <th bgcolor="6699ff"scope = "col">Name</th>
+                <th bgcolor="6699ff"scope = "col">Phone Number</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for customer in customers %}
+              <tr>
+                <td>{{ customer['customer_id'] }}</td>
+                <td>{{customer['name']}}</td>
+                <td>{{customer['contact_number']}}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      
+    </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Restaurant Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content { height: 100vh; }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f8f9fa;
+      height: 100%;
+    }
+    
+    /* Style for form */
+    .custom-form {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content { height: auto; } 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h3>CUSTOMER ENTRY</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/home">Restaurant Details</a></li>
+        <li><a href="/home/order">Order Details</a></li>
+        <li><a href="/home/customer">Customer Details</a></li>
+        <li><a href="/home/menu">Menu</a></li>
+        <li class="active"><a href="/home/customer_entry">Customer Entry</a></li>
+        <li ><a href="/home/order_item">Order Items</a></li>
+        <li ><a href="/home/item_entry">Item Entry</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="custom-form">
+              <h3 class="mb-4">Customer Details Form</h3>
+              <form method="POST" action="/add_customer">                 
+                <div class="form-group">
+                  <label for="Name">NAME</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter customer name">
+                </div>
+                <div class="form-group">
+                  <label for="ContactNumber">CONTACT NUMBER</label>
+                  <input type="tel" class="form-control" name="number" id="number" placeholder="Enter contact number">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
